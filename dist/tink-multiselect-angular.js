@@ -61,7 +61,7 @@
     };
   }]);
 })();
-;angular.module('tink.skeleton').run(['$templateCache', function($templateCache) {
+;angular.module('tink.multiselect').run(['$templateCache', function($templateCache) {
   'use strict';
 
   $templateCache.put('templates/multiselect.html',

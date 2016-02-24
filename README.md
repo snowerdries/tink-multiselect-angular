@@ -1,4 +1,4 @@
-# Tink skeleton Angular directive
+# Tink multiselect Angular directive
 
 v0.1.0
 
