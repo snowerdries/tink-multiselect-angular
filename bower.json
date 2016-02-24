@@ -1,9 +1,9 @@
 {
-  "name": "tink-skeleton-angular",
+  "name": "tink-multiselect-angular",
   "version": "0.1.0",
   "license": "MIT",
   "main": [
-    "dist/tink-skeleton-angular.js"
+    "dist/tink-multiselect-angular.js"
   ],
   "ignore": [
     ".*",
@@ -23,7 +23,8 @@
     "angular-touch": "~1.4.9",
     "angular-route": "~1.4.9",
     "jquery": "~2.2.0",
-    "tink-core": "latest"
+    "tink-core": "latest",
+    "lodash": "~4.5.1"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.9",

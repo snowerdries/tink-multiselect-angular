@@ -1,8 +1,8 @@
 <!doctype html>
-<html ng-app="tink.skeleton">
+<html ng-app="tink.multiselect">
 <head>
   <meta charset="utf-8">
-  <title>Tink module</title>
+  <title>Multiselect Tink module</title>
   <meta name="description" content="">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="initial-scale=1.0,user-scalable=no,minimum-scale=1.0">
@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<tink-skeleton data-text="Skeleton is working fine!"></tink-skeleton>
+<tink-multi-select disabled="false" empty-text="leeg" model="[{description:'item1'},{description:'item2'},{description:'item3'}]" />
 
 <!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -25,6 +25,6 @@
 <script src="bower_components/angular-route/angular-route.js"></script>
 <!-- endbower -->
 
-<script src="scripts/directives/skeleton.js"></script>
+<script src="scripts/directives/multiselect.js"></script>
 </body>
 </html>
