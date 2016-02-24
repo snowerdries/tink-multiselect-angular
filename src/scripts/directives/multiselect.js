@@ -3,7 +3,7 @@
   try {
     module = angular.module('tink.multiselect');
   } catch (e) {
-    module = angular.module('tink.multiselect', []);
+    module = angular.module('tink.multiselect', ['ngLodash']);
   }
   module.directive('tinkMultiSelect', [function () {
     return {
