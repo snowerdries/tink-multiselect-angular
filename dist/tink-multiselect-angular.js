@@ -52,9 +52,9 @@
 
             $scope.getStyle = function () {
                 if (!$scope.disabled) {
-                    return { border: '1px',borderStyle:'solid',borderRadius: '0.2142857143rem' };
+                    return { border: '1px',borderStyle:'solid',borderColor:'#c5c5c5',borderRadius: '0.2142857143rem' };
                 } else {
-                    return { border: '1px', borderStyle: 'solid',borderRadius: '0.2142857143rem', backgroundColor: '#eaeaea' };
+                    return { border: '1px', borderStyle: 'solid',borderColor:'#c5c5c5',borderRadius: '0.2142857143rem', backgroundColor: '#eaeaea' };
                 }
             };
         }]
