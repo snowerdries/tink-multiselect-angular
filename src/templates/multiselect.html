@@ -9,7 +9,7 @@
     <div class="col-xs-1" ng-click="changeEditMode()"><i ng-if="!editMode" class="fa fa-caret-down pull-right"></i><i ng-if="editMode" class="fa fa-caret-up pull-right"></i></div>
 </div>
 <div ng-if="editMode" class="row" style="border: 1px solid #bbb;">
-    <div class="row" style="padding-left: 15px" ng-repeat="item in notSelectedItems() track by $index" ng-click="item.isChecked=true">
+    <div class="row" style="padding-left: 15px" ng-repeat="item in notSelectedItems() track by $index" ng-click="selectItem(item)">
         <div class="col-xs-12">
             {{item.description}}
         </div>

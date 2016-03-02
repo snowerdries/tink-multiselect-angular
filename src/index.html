@@ -11,8 +11,12 @@
   <!-- endbower -->
 </head>
 <body>
+<form ng-controller="controller as ctrl">
+	<tink-multi-select disabled="false" empty-text="leeg" ng-model="ctrl.items" />
+</form>
 
-<tink-multi-select disabled="false" empty-text="leeg" model="[{description:'item1'},{description:'item2'},{description:'item3'}]" />
+
+
 
 <!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -26,6 +30,13 @@
 <script src="bower_components/lodash/lodash.js"></script>
 <script src="bower_components/ng-lodash/build/ng-lodash.js"></script>
 <!-- endbower -->
+
+ <script>
+  var app = angular.module('tink.multiselect',['ngLodash']).controller('controller',['$scope',function($scope){
+  	var vm=this;
+  	vm.items=[{id:1,description:'item1'},{id:2,description:'item2'},{id:3,description:'item3'}];
+  }])
+  </script>
 
 <script src="scripts/directives/multiselect.js"></script>
 </body>
