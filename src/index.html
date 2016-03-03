@@ -13,14 +13,16 @@
 </head>
 <body>
 
-<div class="row margin-top-lg">
-  <div class="col-xs-12 col-sm-10 col-sm-push-1 col-md-8 col-md-push-2 col-lg-6 col-lg-push-3">
-    <form ng-controller="controller as ctrl">
-      <tink-multi-select disabled="false" empty-text="leeg" ng-model="ctrl.items" />
-    </form>
-  </div>
-  <div class="col-xs-12 col-sm-10 col-sm-push-1 col-md-8 col-md-push-2 col-lg-6 col-lg-push-3">
-    <p>Hello!</p>
+<div class="main">
+  <div class="row margin-top-lg">
+    <div class="col-xs-12 col-sm-10 col-sm-push-1 col-md-8 col-md-push-2 col-lg-6 col-lg-push-3">
+      <form ng-controller="controller as ctrl">
+        <tink-multi-select disabled="false" empty-text="leeg" ng-model="ctrl.items" />
+      </form>
+    </div>
+    <div class="col-xs-12 col-sm-10 col-sm-push-1 col-md-8 col-md-push-2 col-lg-6 col-lg-push-3">
+      <p>Hello!</p>
+    </div>
   </div>
 </div>
 
@@ -38,12 +40,12 @@
 <script src="bower_components/ng-lodash/build/ng-lodash.js"></script>
 <!-- endbower -->
 
- <script>
+<script>
   var app = angular.module('tink.multiselect',['ngLodash']).controller('controller',['$scope',function($scope){
   	var vm=this;
-  	vm.items=[{id:1,description:'item1'},{id:2,description:'item2'},{id:3,description:'item3'}];
+  	vm.items=[{id:1,description:'item1'},{id:2,description:'item2'},{id:3,description:'item3'},{id:4,description:'item4'},{id:5,description:'item5'},{id:6,description:'item6'},{id:7,description:'item7'},{id:8,description:'item8'},{id:9,description:'item9'},{id:10,description:'item10'},{id:11,description:'item11'},{id:12,description:'item12'}];
   }])
-  </script>
+</script>
 
 <script src="scripts/directives/multiselect.js"></script>
 </body>

@@ -11,6 +11,7 @@
   }
 
   .label-primary {
+    display: inline-block;
     margin-right: rem(4);
   }
 
@@ -22,6 +23,8 @@
   .popover {
     left: 0;
     margin-top: 1px;
+    max-height: rem(205);
+    overflow: scroll;
     position: absolute;
     right: 0;
   }
