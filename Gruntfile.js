@@ -417,7 +417,9 @@ module.exports = function (grunt) {
     'usemin',
     'copy:styles',
     'cssmin',
-    'clean:server'
+    'clean:server',
+    'concurrent:server',
+    'autoprefixer'
   ]);
 
   grunt.registerTask('default', [
