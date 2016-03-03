@@ -178,6 +178,7 @@
   .multiselect .faux-input {
     cursor: text; }
   .multiselect .label-primary {
+    display: inline-block;
     margin-right: 0.2857142857rem ; }
   .multiselect .upload-btn-delete {
     margin-right: -0.1428571429rem ;
@@ -185,5 +186,7 @@
   .multiselect .popover {
     left: 0;
     margin-top: 1px;
+    max-height: 14.6428571429rem ;
+    overflow: scroll;
     position: absolute;
     right: 0; }
