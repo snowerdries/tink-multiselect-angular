@@ -175,6 +175,8 @@
  */
 .multiselect {
   position: relative; }
+  .multiselect .faux-input {
+    cursor: text; }
   .multiselect .label-primary {
     margin-right: 0.2857142857rem ; }
   .multiselect .upload-btn-delete {

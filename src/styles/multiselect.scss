@@ -7,9 +7,7 @@
   position: relative;
 
   .faux-input {
-    &:hover {
-      // background-color: $gray-lightest;
-    }
+    cursor: text;
   }
 
   .label-primary {

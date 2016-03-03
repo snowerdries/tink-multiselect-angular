@@ -77,7 +77,7 @@
   'use strict';
 
   $templateCache.put('templates/multiselect.html',
-    "<div class=multiselect> <div class=\"faux-input pointer select\" data-ng-click=changeEditMode()> <span class=placeholder data-ng-if=noItemsSelected()>{{::emptyText}}</span>\n" +
+    "<div class=multiselect> <div class=faux-input data-ng-click=changeEditMode()> <span class=placeholder data-ng-if=noItemsSelected()>{{::emptyText}}</span>\n" +
     "<span class=label-primary data-ng-repeat=\"item in selectedItems()\"> {{item.description}}\n" +
     "<button class=upload-btn-delete data-ng-click=deselectItem(item)><span class=sr-only>Leegmaken</span></button> </span> </div> <div data-ng-if=\"editMode && notSelectedItems() != ''\" class=popover> <ul class=popover-list-buttons> <li data-ng-repeat=\"item in notSelectedItems() track by $index\" data-ng-click=selectItem(item)> <a href=\"\"><span>{{item.description}}</span></a> </li> </ul> </div> </div>"
   );
