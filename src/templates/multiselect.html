@@ -1,17 +1,16 @@
 <div class="multiselect">
-  <div class="faux-input" data-ng-click="changeEditMode()">
+  <div class="faux-input pointer select" data-ng-click="changeEditMode()">
     <span class="placeholder" data-ng-if="noItemsSelected()">{{::emptyText}}</span>
     <span class="label-primary" data-ng-repeat="item in selectedItems()">
       {{item.description}}
       <button class="upload-btn-delete" data-ng-click="deselectItem(item)"><span class="sr-only">Leegmaken</span></button>
     </span>
   </div>
-  <!-- <div class="col-xs-1"><i data-ng-if="!editMode" class="fa fa-caret-down pull-right"></i><i data-ng-if="editMode" class="fa fa-caret-up pull-right"></i></div> -->
-</div>
-<div data-ng-if="editMode" class="popover">
-  <ul class="popover-list-buttons">
-    <li data-ng-repeat="item in notSelectedItems() track by $index" data-ng-click="selectItem(item)">
-      <a href=""><span>{{item.description}}</span></a>
-    </li>
-  </ul>
+  <div data-ng-if="editMode && notSelectedItems() != ''" class="popover">
+    <ul class="popover-list-buttons">
+      <li data-ng-repeat="item in notSelectedItems() track by $index" data-ng-click="selectItem(item)">
+        <a href=""><span>{{item.description}}</span></a>
+      </li>
+    </ul>
+  </div>
 </div>

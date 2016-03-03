@@ -4,15 +4,27 @@
 @import "../../bower_components/tink-core/dist/tink/mixins";
 
 .multiselect {
+  position: relative;
+
+  .faux-input {
+    &:hover {
+      // background-color: $gray-lightest;
+    }
+  }
+
   .label-primary {
     margin-right: rem(4);
   }
+
   .upload-btn-delete {
     margin-right: rem(-2);
-    // bottom: 0;
     margin-top: rem(-2.5);
-    // position: absolute;
-    // right: rem(0);
-    // top: 50%;
+  }
+
+  .popover {
+    left: 0;
+    margin-top: 1px;
+    position: absolute;
+    right: 0;
   }
 }
