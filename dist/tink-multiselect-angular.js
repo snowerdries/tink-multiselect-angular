@@ -19,6 +19,17 @@
         },
         link:function(scope, element, attrs, controller) {
             scope.makeFormDirty = controller.$setDirty;
+             $(document).bind('click', function(event){
+                var isClickedElementChildOfPopup = element
+                    .find(event.target)
+                    .length > 0;
+
+                if (isClickedElementChildOfPopup)
+                    return;
+
+                scope.editMode=false;
+                scope.$apply();
+             });
         },
         controller: ['$scope','lodash',function ($scope,_) {
             $scope.noItemsSelected = function () {
