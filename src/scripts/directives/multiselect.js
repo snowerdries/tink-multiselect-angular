@@ -6,18 +6,20 @@
     module = angular.module('tink.multiselect', ['ngLodash']);
   }
   module.directive('tinkMultiSelect', [function () {
-    return {
+        return {
         //'A' - only matches attribute name,'E' - only matches element name,'C' - only matches class name
         restrict: 'E',
         templateUrl: 'templates/multiselect.html',
-        require: '^form',
+        require: 'ngModel',
         //= parent scope, @ string, & function
         scope: {
             ngModel: '=',
             emptyText: '@',
             disabled:'='
         },
-        link:function(scope, element, attrs, controller) {
+        link: function (scope, element, attrs, controller) {
+            scope.isRequired = attrs.required;
+            scope.setValidity = controller.$setValidity;
             scope.makeFormDirty = controller.$setDirty;
              $(document).bind('click', function(event){
                 var isClickedElementChildOfPopup = element
@@ -43,6 +45,15 @@
                 var selected = _.filter($scope.ngModel, function (item) {
                     return item.isChecked;
                 });
+
+                if ($scope.isRequired) {
+                    if (selected.length > 0) {
+                        $scope.setValidity('required', true);
+                    } else {
+                        $scope.setValidity('required', false);
+                    }
+                }
+
                 return selected;
             };
 
@@ -82,5 +93,6 @@
             };
         }]
     };
+
   }]);
 })();
