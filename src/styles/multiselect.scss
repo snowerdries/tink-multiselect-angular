@@ -19,13 +19,21 @@
     margin-right: rem(-2);
     margin-top: rem(-2.5);
   }
-
-  .popover {
+  
+  .popover{
     left: 0;
     margin-top: 1px;
+    position:absolute;   
+    right: 0; 
+    
+    &-list {
     max-height: rem(205);
-    overflow: scroll;
-    position: absolute;
-    right: 0;
+    overflow-y: scroll;
+    }
+    
+    &-search {
+      margin-bottom: rem($popover-padding);
+    }
   }
+
 }

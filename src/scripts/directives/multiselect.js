@@ -21,6 +21,7 @@
             scope.isRequired = attrs.required;
             scope.setValidity = controller.$setValidity;
             scope.makeFormDirty = controller.$setDirty;
+            scope.showSearchbar = attrs.tinkShowSearchbar;
              $(document).bind('click', function(event){
                 var isClickedElementChildOfPopup = element
                     .find(event.target)
@@ -93,6 +94,5 @@
             };
         }]
     };
-
   }]);
 })();

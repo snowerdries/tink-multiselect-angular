@@ -186,7 +186,10 @@
   .multiselect .popover {
     left: 0;
     margin-top: 1px;
-    max-height: 14.6428571429rem ;
-    overflow: scroll;
     position: absolute;
     right: 0; }
+    .multiselect .popover-list {
+      max-height: 14.6428571429rem ;
+      overflow-y: scroll; }
+    .multiselect .popover-search {
+      margin-bottom: 0.4285714286rem ; }
