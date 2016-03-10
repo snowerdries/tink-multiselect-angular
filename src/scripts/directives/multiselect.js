@@ -22,6 +22,7 @@
             scope.setValidity = controller.$setValidity;
             scope.makeFormDirty = controller.$setDirty;
             scope.showSearchbar = attrs.tinkShowSearchbar;
+            scope.DisplayProperty = attrs.tinkDisplayProperty ? attrs.tinkDisplayProperty : "description";
              $(document).bind('click', function(event){
                 var isClickedElementChildOfPopup = element
                     .find(event.target)

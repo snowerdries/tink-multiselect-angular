@@ -4,9 +4,9 @@ v0.1.0
 
 ## What is this repository for?
 
-The Tink Angular skeleton provides a scaffold for a directive or service that can easily work with Tink.
+The Tink Angular multiselect provides a dropdown that allows to select multiple options.
 
-Tink is an in-house developed easy-to-use front end framework for quick prototyping and simple deployment of all kinds of websites and apps, keeping a uniform and consistent look and feel.
+Tink is an in-house developed easy-to-use front-end framework for quick prototyping and simple deployment of all kinds of websites and apps, keeping a uniform and consistent look and feel
 
 ## Setup
 
@@ -18,11 +18,47 @@ Tink is an in-house developed easy-to-use front end framework for quick prototyp
 ### Install
 
 1. Go to the root of your project and type the following command in your terminal:
-   `bower install tink-skeleton-angular --save`
 
-2. Include `dist/tink-skeleton-angular.js` and its necessary dependencies in your project.
+   `bower install tink-multiselect-angular --save`
 
-3. On http://tink.digipolis.be you will find all necessary documentation.
+2. Add the following files to your project:
+
+   `<link rel="stylesheet" href="bower_components/tink-core/dist/tink.css" />` (or one of the Tink themes)
+
+   `<script src="bower_components/tink-multiselect-angular/dist/tink-multiselect-angular.js"></script>`
+
+   `<script src="bower_components/tink-helper-safe-apply-angular/dist/tink-helper-safe-apply-angular.js"></script>`
+
+3. Add `tink.multiselect` to your app module's dependency.
+
+   `angular.module('myApp', ['tink.multiselect']);`
+
+----------
+
+## How to use
+
+### tink-multiselect
+
+```html
+        <tink-multi-select data-ng-model="displayedItems" empty-text="None"></tink-multi-select>
+```
+
+### Options
+
+Attr | Type | Default | Details
+--- | --- | --- | ---
+data-ng-model (required) | `object` | `''` | This variable holds an array with the shown items.
+empty-text (required) | `string` | `''` | This string is shown when there are no items selected.
+tink-show-searchbar (optional) | `boolean` | `false` | Provides a searchbar wich can filters the shows item set.
+tink-display-property (optional) | `string` | `description` | This string holds the name of the property of the item to display
+        
+* An item that is selected will get the attr **isChecked** set to **true**
+* Note: The Tink multiselect also works with the disabled attribute.
+
+
+### Example
+
+A working example can be found in [the Tink documentation](http://tink.digipolis.be/#/docs/directives/multiselect#example).
 
 ## Contribution guidelines
 
