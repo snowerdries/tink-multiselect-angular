@@ -1,0 +1,195 @@
+/**
+ * Variables
+ * ----------------------------------------------------------------
+ */
+/**
+ * Grid
+ */
+/**
+ * Scaffolding
+ */
+/**
+ * Type
+ */
+/**
+ * Code
+ */
+/**
+ * Animation
+ */
+/**
+ * Form states and alerts
+ */
+/**
+ * Tables
+ */
+/**
+ * Components - global settings
+ */
+/**
+ * Buttons
+ *
+ * For each of Bootstrap's buttons, define text, background and border color.
+ */
+/**
+ * Forms
+ */
+/**
+ * Z-index, a better implementation
+ * http://www.sitepoint.com/better-solution-managing-z-index-sass/
+ *
+ * Use like this:
+ *   z-index: layer("popover");
+ *     where popover is a list item of the default list "$layers" (see below)
+ *
+ * The list is also upgradeable in that nesting is permitted, e.g.:
+ * $z-layers: (
+ *   'modal': (
+ *     'back': 50,
+ *     'front': 60
+ *   ),
+ *   'nav-top': 49,
+ *   ...
+ * )
+ *
+ * Complete layer list (for reference, add these to $layers only if needed)
+ * $layers: base, navbar, dropdown, tooltip, navbar-sticky, navbar-fixed, modal-background, modal, popover;
+ * Old layer list
+ * $layers: base, pseudo, above-pseudo, nav-aside, popover, sticky, nav-top, modal !default;
+ */
+/**
+ * Bar component
+ *
+ * Settings for a standard bar
+ */
+/**
+ * Logo
+ */
+/**
+ * Navigation
+ *
+ * Settings for the top navigation and the off-canvas navigation
+ */
+/**
+ * Datepicker
+ *
+ * Settings for both the single as the range datepicker
+ */
+/**
+ * Callout
+ */
+/**
+ * Hit-area-box
+ */
+/**
+ * Navs
+ */
+/**
+ * Tabs
+ */
+/**
+ * Tooltips
+ */
+/**
+ * Popovers
+ */
+/**
+ * Upload
+ */
+/**
+ * Labels
+ */
+/**
+ * Modals
+ */
+/**
+ * Cards
+ */
+/**
+ * Interactive table
+ */
+/**
+ * Table alternative heading
+ */
+/**
+ * Thumbnails
+ */
+/**
+ * Pagination
+ */
+/**
+ * Badges
+ */
+/**
+ * Breadcrumbs
+ */
+/**
+ * Filter bar
+ */
+/**
+ * Loader
+ */
+/**
+ * Variables
+ */
+/**
+ * Functions
+ * ----------------------------------------------------------------
+ */
+/**
+ * Strip units from any number
+ */
+/**
+ *  Convert pixels to em
+ */
+/**
+ *  Convert pixels to rem
+ */
+/**
+ * Return a space separated list as rem values
+ * e.g. padding: rem(10 20 10 15);
+ */
+/**
+ * image-url function (cfr. Compass)
+ */
+/**
+ * All functions needed for handling z-index
+ * - check for nested keys
+ * - get a nested list item
+ * - return a z-index list property
+ */
+/**
+ * Mixins
+ * --------------------------------------------------
+ */
+/**
+ * Arrow mixin
+ * --------------------------------------------------
+ * Arrow
+ * :before is the arrow border
+ * :after is the arrow background
+ */
+/**
+ * Form mixins
+ *
+ */
+.multiselect {
+  position: relative; }
+  .multiselect .faux-input {
+    cursor: text; }
+  .multiselect .label-primary {
+    display: inline-block;
+    margin-right: 0.2857142857rem ; }
+  .multiselect .upload-btn-delete {
+    margin-right: -0.1428571429rem ;
+    margin-top: -0.1785714286rem ; }
+  .multiselect .popover {
+    left: 0;
+    margin-top: 1px;
+    position: absolute;
+    right: 0; }
+    .multiselect .popover-list {
+      max-height: 14.6428571429rem ;
+      overflow-y: scroll; }
+    .multiselect .popover-search {
+      margin-bottom: 0.4285714286rem ; }

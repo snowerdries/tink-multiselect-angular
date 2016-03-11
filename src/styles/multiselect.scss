@@ -1,0 +1,39 @@
+// Remove the underscore (_) from this filename in order to include it in the build
+@import "../../bower_components/tink-core/dist/tink/variables";
+@import "../../bower_components/tink-core/dist/tink/functions";
+@import "../../bower_components/tink-core/dist/tink/mixins";
+
+.multiselect {
+  position: relative;
+
+  .faux-input {
+    cursor: text;
+  }
+
+  .label-primary {
+    display: inline-block;
+    margin-right: rem(4);
+  }
+
+  .upload-btn-delete {
+    margin-right: rem(-2);
+    margin-top: rem(-2.5);
+  }
+  
+  .popover{
+    left: 0;
+    margin-top: 1px;
+    position:absolute;   
+    right: 0; 
+    
+    &-list {
+    max-height: rem(205);
+    overflow-y: scroll;
+    }
+    
+    &-search {
+      margin-bottom: rem($popover-padding);
+    }
+  }
+
+}
