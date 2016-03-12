@@ -64,7 +64,7 @@
                 return selected;
             };
 
-            $scope.changeEditMode = function ($element) {
+            $scope.changeEditMode = function () {
                 if (!$scope.disabled) {
                     $scope.editMode = !$scope.editMode;
                 }
