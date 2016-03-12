@@ -23,16 +23,21 @@
             scope.makeFormDirty = controller.$setDirty;
             scope.showSearchbar = attrs.tinkShowSearchbar;
             scope.DisplayProperty = attrs.tinkDisplayProperty ? attrs.tinkDisplayProperty : "description";
-             $(document).bind('click', function(event){
+            $(document).bind('click', function(event){
                 var isClickedElementChildOfPopup = element
                     .find(event.target)
                     .length > 0;
 
-                if (isClickedElementChildOfPopup)
+                if (isClickedElementChildOfPopup){
+                    if(scope.showSearchbar == "true"){
+                    document.getElementById('searchbar').focus();
+                    };
                     return;
-
+                }
+                else {
                 scope.editMode=false;
                 scope.$apply();
+                }
              });
         },
         controller: ['$scope','lodash',function ($scope,_) {
@@ -59,14 +64,7 @@
                 return selected;
             };
 
-            $scope.notSelectedItems=function() {
-                var selected = _.filter($scope.ngModel, function (item) {
-                    return !item.isChecked;
-                });
-                return selected;
-            };
-
-            $scope.changeEditMode = function () {
+            $scope.changeEditMode = function ($element) {
                 if (!$scope.disabled) {
                     $scope.editMode = !$scope.editMode;
                 }
@@ -85,6 +83,10 @@
                     item.isChecked = true;
                 }
             };
+            
+              $scope.updateSearch = function(searchcrit){
+                $scope.searchcrit = searchcrit;
+            };
 
             $scope.getStyle = function () {
                 if (!$scope.disabled) {
@@ -92,7 +94,7 @@
                 } else {
                     return { border: '1px', borderStyle: 'solid',borderColor:'#c5c5c5',borderRadius: '0.2142857143rem', backgroundColor: '#eaeaea' };
                 }
-            };
+            };       
         }]
     };
   }]);
@@ -103,7 +105,7 @@
   $templateCache.put('templates/multiselect.html',
     "<div class=multiselect> <div class=faux-input data-ng-click=changeEditMode()> <span class=placeholder data-ng-if=noItemsSelected()>{{::emptyText}}</span>\n" +
     "<span class=label-primary data-ng-repeat=\"item in selectedItems()\"> {{item[DisplayProperty]}}\n" +
-    "<button class=upload-btn-delete data-ng-click=\"deselectItem(item); $event.stopPropagation()\"><span class=sr-only>Leegmaken</span></button> </span> </div> <div data-ng-if=\"editMode && notSelectedItems() != ''\" class=popover> <input id=search ng-if=showSearchbar ng-model=search class=popover-search ng-model-options={debounce:333} placeholder=Search> <div class=popover-list> <ul class=popover-list-buttons> <li data-ng-repeat=\"item in ngModel | filter:search track by $index\" data-ng-click=selectItem(item)> <a href=\"\" ng-class=\"item.isChecked ? 'tink-bg-grass' :''\"><span>{{item[DisplayProperty]}}</span></a> </li> </ul> </div> </div> </div>"
+    "<button class=upload-btn-delete data-ng-click=\"deselectItem(item); $event.stopPropagation()\"><span class=sr-only>Leegmaken</span></button> </span> </div> <div data-ng-if=editMode class=popover> <input id=searchbar ng-if=showSearchbar ng-model=searchcrit class=popover-search ng-change=updateSearch(searchcrit) ng-model-options={debounce:333} placeholder=Search> <div class=popover-list> <ul class=popover-list-buttons> <li data-ng-repeat=\"item in ngModel | filter:searchcrit track by $index\" data-ng-click=selectItem(item)> <a href=\"\" ng-class=\"item.isChecked ? 'tink-bg-grass' :''\"><span>{{item[DisplayProperty]}}</span></a> </li> </ul> </div> </div> </div>"
   );
 
 }]);
