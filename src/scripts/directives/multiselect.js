@@ -29,7 +29,7 @@
                     .length > 0;
 
                 if (isClickedElementChildOfPopup){
-                    if(scope.showSearchbar == "true"){
+                    if(scope.showSearchbar == "true" && scope.editMode){
                     document.getElementById('searchbar').focus();
                     };
                     return;
