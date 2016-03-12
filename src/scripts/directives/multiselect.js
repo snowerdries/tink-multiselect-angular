@@ -23,16 +23,21 @@
             scope.makeFormDirty = controller.$setDirty;
             scope.showSearchbar = attrs.tinkShowSearchbar;
             scope.DisplayProperty = attrs.tinkDisplayProperty ? attrs.tinkDisplayProperty : "description";
-             $(document).bind('click', function(event){
+            $(document).bind('click', function(event){
                 var isClickedElementChildOfPopup = element
                     .find(event.target)
                     .length > 0;
 
-                if (isClickedElementChildOfPopup)
+                if (isClickedElementChildOfPopup){
+                    if(scope.showSearchbar == "true"){
+                    document.getElementById('searchbar').focus();
+                    };
                     return;
-
+                }
+                else {
                 scope.editMode=false;
                 scope.$apply();
+                }
              });
         },
         controller: ['$scope','lodash',function ($scope,_) {
@@ -59,14 +64,7 @@
                 return selected;
             };
 
-            $scope.notSelectedItems=function() {
-                var selected = _.filter($scope.ngModel, function (item) {
-                    return !item.isChecked;
-                });
-                return selected;
-            };
-
-            $scope.changeEditMode = function () {
+            $scope.changeEditMode = function ($element) {
                 if (!$scope.disabled) {
                     $scope.editMode = !$scope.editMode;
                 }
@@ -85,6 +83,10 @@
                     item.isChecked = true;
                 }
             };
+            
+              $scope.updateSearch = function(searchcrit){
+                $scope.searchcrit = searchcrit;
+            };
 
             $scope.getStyle = function () {
                 if (!$scope.disabled) {
@@ -92,7 +94,7 @@
                 } else {
                     return { border: '1px', borderStyle: 'solid',borderColor:'#c5c5c5',borderRadius: '0.2142857143rem', backgroundColor: '#eaeaea' };
                 }
-            };
+            };       
         }]
     };
   }]);
