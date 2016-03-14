@@ -7,7 +7,7 @@
     </span>
   </div>
   <div data-ng-if="editMode && notSelectedItems() != ''" class="popover">
-    <input id="search" ng-if="showSearchbar" ng-model="search" class="popover-search" ng-model-options="{debounce:333}" placeholder="Search" type="text">
+    <input id="search" type="text" ng-if="showSearchbar" ng-model="search" class="popover-search" ng-model-options="{debounce:333}" placeholder="Search" >
     <div class="popover-list">
     <ul class="popover-list-buttons">
       <li data-ng-repeat="item in ngModel | filter:search track by $index" data-ng-click="selectItem(item)">
