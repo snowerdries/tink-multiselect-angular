@@ -16,6 +16,6 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
-## [1.0.0] - 2016-xx-xx
+## [1.0.0] - 2016-02-14
 
 Initial release
