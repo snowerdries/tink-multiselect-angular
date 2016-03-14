@@ -60,7 +60,6 @@
                         $scope.setValidity('required', false);
                     }
                 }
-
                 return selected;
             };
 
