@@ -19,8 +19,7 @@
             isRequired:'='
         },
         link: function (scope, element, attrs, controller) {
-            scope.attIsRequired = attrs.required;
-            scope.isRequired = attrs.required;
+            scope.attIsRequired = attrs.required;        
             scope.setValidity = controller.$setValidity;
             scope.makeFormDirty = controller.$setDirty;
             scope.showSearchbar = attrs.tinkShowSearchbar;
