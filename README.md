@@ -1,6 +1,6 @@
 # Tink multiselect Angular directive
 
-v1.0.4
+v1.1.0
 
 ## What is this repository for?
 
