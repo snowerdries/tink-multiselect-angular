@@ -15,9 +15,11 @@
         scope: {
             ngModel: '=',
             emptyText: '@',
-            disabled:'='
+            disabled:'=',
+            isRequired:'='
         },
         link: function (scope, element, attrs, controller) {
+            scope.attIsRequired = attrs.required;
             scope.isRequired = attrs.required;
             scope.setValidity = controller.$setValidity;
             scope.makeFormDirty = controller.$setDirty;
@@ -51,15 +53,17 @@
             $scope.selectedItems=function() {
                 var selected = _.filter($scope.ngModel, function (item) {
                     return item.isChecked;
-                });
+                });         
 
-                if ($scope.isRequired) {
+               if ($scope.isRequired || $scope.attIsRequired) {
                     if (selected.length > 0) {
                         $scope.setValidity('required', true);
                     } else {
                         $scope.setValidity('required', false);
                     }
-                }
+                } else {
+					$scope.setValidity('required', true);
+				}
                 return selected;
             };
 
@@ -102,9 +106,25 @@
   'use strict';
 
   $templateCache.put('templates/multiselect.html',
-    "<div class=multiselect> <div class=faux-input data-ng-click=changeEditMode()> <span class=placeholder data-ng-if=noItemsSelected()>{{::emptyText}}</span>\n" +
-    "<span class=label-primary data-ng-repeat=\"item in selectedItems()\"> {{item[DisplayProperty]}}\n" +
-    "<button class=upload-btn-delete data-ng-click=\"deselectItem(item); $event.stopPropagation()\"><span class=sr-only>Leegmaken</span></button> </span> </div> <div data-ng-if=\"editMode && notSelectedItems() != ''\" class=popover> <input id=searchbar type=text ng-if=showSearchbar ng-change=updateSearch(search) ng-model=search class=popover-search ng-model-options={debounce:333} placeholder=Search> <div class=popover-list> <ul class=popover-list-buttons> <li data-ng-repeat=\"item in ngModel | filter:searchcrit track by $index\" data-ng-click=selectItem(item)> <a href=\"\" ng-class=\"item.isChecked ? 'tink-bg-grass' :''\"><span>{{item[DisplayProperty]}}</span></a> </li> </ul> </div> </div> </div>"
+    "<div class=multiselect>\n" +
+    "<div class=faux-input data-ng-click=changeEditMode()>\n" +
+    "<span class=placeholder data-ng-if=noItemsSelected()>{{::emptyText}}</span>\n" +
+    "<span class=label-primary data-ng-repeat=\"item in selectedItems()\">\n" +
+    "{{item[DisplayProperty]}}\n" +
+    "<button class=upload-btn-delete data-ng-click=\"deselectItem(item); $event.stopPropagation()\"><span class=sr-only>Leegmaken</span></button>\n" +
+    "</span>\n" +
+    "</div>\n" +
+    "<div data-ng-if=\"editMode && notSelectedItems() != ''\" class=popover>\n" +
+    "<input id=searchbar type=text ng-if=showSearchbar ng-change=updateSearch(search) ng-model=search class=popover-search ng-model-options={debounce:333} placeholder=Search>\n" +
+    "<div class=popover-list>\n" +
+    "<ul class=popover-list-buttons>\n" +
+    "<li data-ng-repeat=\"item in ngModel | filter:searchcrit track by $index\" data-ng-click=selectItem(item)>\n" +
+    "<a href=\"\" ng-class=\"item.isChecked ? 'tink-bg-grass' :''\"><span>{{item[DisplayProperty]}}</span></a>\n" +
+    "</li>\n" +
+    "</ul>\n" +
+    "</div>\n" +
+    "</div>\n" +
+    "</div>"
   );
 
 }]);
